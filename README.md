@@ -86,7 +86,7 @@ Dibutuhkan **Google Cloud Service Account** dengan akses ke Google Sheets API da
 
 ### Langkah 1 — Siapkan file input
 
-1. Export daftar piutang/AR (Account Receivable) dari **Accurate** ke format `.xls`.
+1. Export daftar piutang/AR (Account Receivable) dari **Accurate** ke format `.xls`. Ambil dari Piutang Persales (masing-masing Depo), tes sementara: MGL ✅, YY, SL
 2. Simpan file tersebut dengan nama **`ExportFile.xls`** di folder utama proyek (sejajar dengan `Ambil AR.py`).
 
 > File ekspor harus mengandung kolom-kolom berikut (nama persis, urutan bebas): `No. Faktur`, `Tgl Faktur`, `Kode`, `Nama Pelanggan`, `Negara Pelanggan`, `Alamat 1 Pelanggan`, `Kota Pelanggan`, `Jatuh Tempo`, `Nilai Faktur`, `Sisa Piutang`, `Umur JT`, `Telepon Pelanggan`, `Sales`, `Area`.
