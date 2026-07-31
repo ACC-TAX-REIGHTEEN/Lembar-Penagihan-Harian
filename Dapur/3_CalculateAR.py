@@ -1,3 +1,4 @@
+from datetime import datetime
 import time
 import pandas as pd
 import xlwings as xw
@@ -17,6 +18,15 @@ try:
                     config[current_key] = line
 except Exception as e:
     print(f"--> Gagal membaca piutang.conf: {e}")
+
+tgl_config_str = config.get('TANGGAL', '')
+tgl_config_val = tgl_config_str
+
+if tgl_config_str:
+    try:
+        tgl_config_val = datetime.strptime(tgl_config_str, '%d/%m/%Y').date()
+    except ValueError:
+        tgl_config_val = tgl_config_str
 
 df = pd.read_excel('Laporan_Piutang_Penagih_temp.xlsx')
 
@@ -56,7 +66,9 @@ try:
         ws_out.range((start_row_for_group + 1, 4)).value = penagih
         ws_out.range((start_row_for_group + 1, 8)).value = config.get('PERUSAHAAN', '')
         ws_out.range((start_row_for_group + 1, 11)).value = config.get('DIVISI', '')
-        ws_out.range((start_row_for_group + 1, 15)).value = config.get('TANGGAL', '')
+        
+        ws_out.range((start_row_for_group + 1, 15)).value = tgl_config_val
+        
         ws_out.range((start_row_for_group + 2, 15)).value = config.get('INPUT', '')
         
         current_out_row += 4
