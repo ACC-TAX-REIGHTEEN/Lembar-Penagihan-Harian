@@ -97,7 +97,7 @@ pip install pandas openpyxl xlrd xlsxwriter xlwings gspread google-auth
     ├── 📄 3_CalculateAR.py      ← Susun ke TEMPLATE.xlsm → Print_AR.xlsm
     ├── 📄 4_HelperCleaningData.py ← Ratakan merge, isi nama penagih, hapus non-data
     ├── 📄 5_InjectDataToSS.py   ← Sisipkan 14 kolom ke Google Sheets
-    ├── 📄 TEMPLATE.xlsm         ← Template resmi lembar tagihan (jangan dihapus)
+    ├── 📄 TEMPLATE.xlsm         ← Template resmi lembar tagihan (jangan dihapus, pastikan nama header lembar tagihan di ganti sesuai dengan nama depo masing-masing)
     ├── 📄 credentials.json      ← Kredensial Google Service Account (rahasia!)
     └── 📄 piutang.conf          ← Konfigurasi mapping penagih, metadata, Google Sheets
 ```
