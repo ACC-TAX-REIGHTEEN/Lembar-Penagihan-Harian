@@ -48,6 +48,7 @@ def clean_data_autofit(input_file, output_file):
         "No. Faktur": ["No. Faktur"],
         "Tgl Faktur": ["Tgl Faktur"],
         "Kode": ["Kode"],
+        "Jatuh Tempo": ["Jatuh Tempo", "JT", "Tgl JT"],
         "Nama Pelanggan": ["Nama Pelanggan", "Nama"],
         "Nilai Faktur": ["Nilai Faktur"],
         "Sisa Piutang": ["Sisa Piutang", "Terutang"],
@@ -105,7 +106,7 @@ def clean_data_autofit(input_file, output_file):
         "No. Faktur": get_col_data("No. Faktur"),
         "Tgl Faktur": get_col_data("Tgl Faktur"),
         "_SS_1": np.nan,
-        "Jatuh Tempo": np.nan,
+        "Jatuh Tempo": get_col_data("Jatuh Tempo"),
         "_SS_2": np.nan,
         "Nilai Faktur": get_col_data("Nilai Faktur"),
         "Sisa Piutang": get_col_data("Sisa Piutang"),
@@ -116,6 +117,7 @@ def clean_data_autofit(input_file, output_file):
     })
 
     temp_df["Tgl Faktur"] = temp_df["Tgl Faktur"].apply(parse_tgl_faktur)
+    temp_df["Jatuh Tempo"] = temp_df["Jatuh Tempo"].apply(parse_tgl_faktur)
 
     def parse_to_float(val):
         if pd.isna(val) or str(val).strip() == "":
@@ -185,7 +187,7 @@ def clean_data_autofit(input_file, output_file):
                 else:
                     worksheet.set_column(i, i, max_len)
                     
-        print(f"--> SUKSES! File tersimpan di: {output_file}")
+        print(f"--> Sukses! File tersimpan di: {output_file}")
         
     except Exception as e:
         print(f"--> Error saat menyimpan file: {e}")
