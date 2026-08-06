@@ -2,7 +2,7 @@
 
 > **Satu klik: ekspor AR Accurate → pembersihan multi-tahap → lembar tagihan per penagih siap cetak + inject ke Google Sheets**
 
-Pipeline Python empat belas langkah yang membaca ekspor daftar piutang dari Accurate (`Piutang.xls`) dan data Giro opsional (`Giro.xls`), menjalankan serangkaian validasi dan pembersihan data (hapus piutang lunas via Giro, hapus saldo nol, sinkronisasi nama dari master data, filter faktur pending), mengelompokkan tagihan per **penagih/sales**, menghasilkan **`Print_AR.xlsm`** — lembar tagihan per penagih berformat template resmi siap cetak — sekaligus menyuntikkan seluruh data ke **Google Sheets** dan mencetak otomatis ke printer yang dipilih.
+Pipeline Python empat belas langkah yang membaca ekspor daftar piutang dari Accurate pilihan: Daftar Piutang Penjualan atau Piutang Persales (`Piutang.xls`) dan data Giro wajib jika menggunakan Piutang Persales (`Giro.xls`), menjalankan serangkaian validasi dan pembersihan data (hapus piutang lunas via Giro, hapus saldo nol, sinkronisasi nama dari master data, filter faktur pending), mengelompokkan tagihan per **penagih/sales**, menghasilkan **`Print_AR.xlsm`** — lembar tagihan per penagih berformat template resmi siap cetak — sekaligus menyuntikkan seluruh data ke **Google Sheets** dan mencetak otomatis ke printer yang dipilih.
 
 ---
 
